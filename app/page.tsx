@@ -1,6 +1,17 @@
-import Image from 'next/image'
+"use client";
+
+import Image from "next/image";
+import { useEffect } from "react";
 
 export default function Home() {
+  useEffect(() => {
+    fetch("http://localhost:3000/api/auth", {
+      headers: {
+        Authorization:
+          "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiY2xrMDVsdWdqMDAwNHRhdGN3OXoxOGttcSIsImlhdCI6MTY4OTE5MjUxMH0.fudYdwHDQOkCLT-cB6K7beCeE4gzHxkniBy_MyYVkzI",
+      },
+    });
+  }, []);
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -15,7 +26,7 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            By{' '}
+            By{" "}
             <Image
               src="/vercel.svg"
               alt="Vercel Logo"
@@ -47,7 +58,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
+            Docs{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -64,7 +75,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
+            Learn{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -81,7 +92,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
+            Templates{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -98,7 +109,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
+            Deploy{" "}
             <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
@@ -109,5 +120,5 @@ export default function Home() {
         </a>
       </div>
     </main>
-  )
+  );
 }
